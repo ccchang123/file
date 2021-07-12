@@ -1,0 +1,994 @@
+# Made by cc_chang
+# © 2020-2021 cc_chang. All rights reserved.
+#
+Test:
+  Type: zombie
+  Display: '&4test'
+  Health: 400
+  Damage: 10
+  Armor: 0
+  Skills:
+  #- sethealth{a=1} @PIR{r=10} ~onInteract
+  #
+  #- addtag{t=WalkingDamage_3/16_Tag} @self ~onSpawn
+  #- skill{s=WalkingDamage_3/16} ~onTimer:1
+  #
+  #- skill{s=Death_10} @trigger ~onDamaged
+  #- removebuff{name=Death} @trigger ~onDeath
+  #
+  #- addtag{t=NoDeath_Tag} @self ~onSpawn
+  #- skill{s=NoDeath} @self ~onDamaged
+  #
+  #- skill{s=UTC} @self ~onTimer:1
+  #- setlevel{a=set;l=5} ~onSpawn
+  #
+  #- shield{a=1;ms=10} @self ~onTimer:1
+  #
+  #- addtag{t=IR_Tag} @self ~onSpawn
+  #- skill{s=IR} @self ~onDamaged
+  #
+  #- addtag{t=Sticky_Rot_Tag} @self ~onSpawn
+  #- skill{s=Sticky_Rot} ~onDamaged
+  #- effect:particles{p=smoke;a=200;hs=0.5;vs=0.5;s=0.2;y=-1} @self ~onTimer:1
+  #
+  #- setlevel{a=set;l=1} @self ~onSpawn
+  #- addtag{t=Resurrection_3_Tag} @self ~onSpawn
+  #- skill{s=Resurrection_3} @trigger ~onDamaged
+  #
+  #- potionclear @trigger ~onInteract
+  #
+  #- skill{s=Crusade_Set_Count} ~onSpawn
+  #- skill{s=Crusade_Reward} @trigger ~onDeath
+  #- modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  #- message{m="&c目前剩餘 <global.score.Crusade_Count>"} @trigger ~onDeath
+  #
+  #- closeinventory{forcesync=true} @PIR{r=16} ~onTimer:1
+  #
+  #- blackscreen{d=100} @PIR{r=16} ~onInteract
+  #
+  #- effect:bloodyScreen{d=100} @PIR{r=15} ~onInteract
+  #
+  #- sendresourcepack{url="https://www.dropbox.com/s/mt8ioz4n0uijff9/%E6%9D%90%E8%B3%AA%E6%93%B4%E5%B1%95%E5%8C%85.zip?dl=1"} @PIR{r=15} ~onInteract
+  #
+  #- potion{t=jump;d=40;hasParticles=false;l=128;force=true}
+  #
+  #- sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  #- potion{t=damage_resistance;d=2147483647;hasParticles=false;l=4;force=true} @self ~onSpawn
+  #- modifyglobalscore{o=IR;a=SET;v=1} ~onSpawn
+  #- barCreate{n=IR;d="&b敵人減傷狀態:100%";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
+  #- skill{s=Injury_Reduction_1} @self ~onAttack
+  #- skill{s=Injury_Reduction_2} @self ~onAttack
+  #- skill{s=Injury_Reduction_3} @self ~onAttack
+  #- skill{s=Injury_Reduction_4} @self ~onAttack
+  #- skill{s=Injury_Reduction_5} @self ~onAttack
+  - sound{s=lottery;repeat=6;repeatInterval=140} @self ~onSpawn
+  #
+  Drops:
+  -
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name> &f&l<&eq> &f&d血量: &c&l<&lb><mob.hp>&f&b/&c&l<mob.mhp><&rb> &f&l<&eq> &f&d敵人位置: &c&l<&lb><mob.l.x> &b, &c&l<mob.l.y> &b, &c&l<mob.l.z><&rb> <mob.level>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  #- totem_of_undying hand
+  KillMessages:
+  - ''
+  DamageModifiers:
+  -
+  Options:
+   MovementSpeed: 0.29
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+#
+測試人員:
+  Type: villager
+  Display: '&a測試人員'
+  Health: 2000
+  Damage: 0
+  Armor: 0
+  Skills:
+  - healPercent{m=1;oh=false} @self ~onDamaged
+  - message{m="&a已造成傷害:&b <skill.var.damage-amount>"} @trigger ~onDamaged
+  Options:
+   NoAI: true
+   AlwaysShowName: true
+   Silent: true
+   Despawn: false
+   Persistent: true
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+#端午節
+屈原:
+  Type: zombie
+  Display: '&c屈原'
+  Health: 307
+  Damage: 1
+  Armor: 0
+  Skills:
+  - sound{s=block.fire.extinguish} @PIR{r=10} ~onSpawn
+  - damagepercent{p=0.2;ia=true;pk=true;pi=true} @PIR{r=10} ~onSpawn
+  - addtag{t=NoDeath_Tag} @self ~onSpawn
+  - skill{s=NoDeath} @self ~onDamaged
+  - skill{s=lightning_5s_1d_10c} @trigger ~onAttack
+  - removebuff{name=lightning} @trigger ~onDeath
+  - message{m="&c&l你各位啊 吃粽子了嗎?"} @trigger ~onDeath
+  - message{m="&4&kmade by cc_chang"} @trigger ~onDeath
+  - message{m="屈原 溺死了"} @trigger ~onDeath
+  Drops:
+  - Zongzi_Material 1-2 0.8
+  LevelModifiers:
+   Damage: 307
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - totem_of_undying hand
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - ''
+  DamageModifiers:
+  - DROWNING 2
+  Options:
+   MovementSpeed: 0.43
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+#
+#討伐戰
+來自官方的惡意_S1:
+  Type: zombie
+  Display: '&c來自官方的第一惡意'
+  Health: 100
+  Damage: 6
+  Armor: 2147483647
+  Skills:
+  - sound{s=music1;repeat=10;repeatInterval=2520} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music1"} @self ~onDeath
+  #
+  - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
+  - damage{a=5;ia=true;pk=true;pi=true} @self ~onAttack
+  - sound{s=block.fire.extinguish} @self ~onAttack
+  - skill{s=Sticky_Rot} @trigger ~onAttack
+  - potionclear @self ~onTimer:1
+  - potionclear @trigger ~onAttack
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - skill{s=Crusade_Set_Count} ~onSpawn
+  - skill{s=Crusade_Reward} @trigger ~onDeath
+  - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  - actionmessage{m="&b已成功消除了一點官方的惡意，目前剩餘 &c<global.score.Crusade_Count>"} @trigger ~onDeath
+  Drops:
+  - Lottery_Ticket_Medal 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c第一惡意'
+  - '<target.name> 因 &c第一惡意 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在消除 &c<mob.name> &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - PROJECTILE 0
+  - FALL 0
+  - THORNS 0
+  Options:
+   MovementSpeed: 0.4
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+   KnockbackResistance: 1
+來自官方的惡意_S2:
+  Type: zombie
+  Display: '&c來自官方的第二惡意'
+  Health: 87
+  Damage: 2
+  Armor: 0
+  Skills:
+  - sound{s=music1;repeat=10;repeatInterval=2520} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music1"} @self ~onDeath
+  #
+  - sound{s=boom1} @self ~onTimer:20
+  - setlevel{a=set;l=21} @self ~onSpawn
+  - addtag{t=20Combo_Tag} @self ~onSpawn
+  - damage{a=1;ia=true;pk=true;pi=true} @trigger ~onDamaged
+  - sound{s=thorns} @trigger ~onDamaged
+  - skill{s=Combo_20} @self ~onDamaged
+  - skill{s=Self_Destruct_5d} ~onDeath
+  - potionclear @self ~onTimer:1
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - skill{s=Crusade_Set_Count} ~onSpawn
+  - skill{s=Crusade_Reward} @trigger ~onDeath
+  - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  - actionmessage{m="&b已成功消除了一點官方的惡意，目前剩餘 &c<global.score.Crusade_Count>"} @trigger ~onDeath
+  Drops:
+  - Lottery_Ticket_Medal 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 2147483647
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c第二惡意'
+  - '<target.name> 因 &c第二惡意 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在消除 &c<mob.name> &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - FALL 0
+  Options:
+   MovementSpeed: 0.45
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+來自官方的惡意_S3:
+  Type: zombie
+  Display: '&c來自官方的第三惡意'
+  Health: 200
+  Damage: 0
+  Armor: 0
+  Skills:
+  - sound{s=music1;repeat=10;repeatInterval=2520} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music1"} @self ~onDeath
+  #
+  - skill{s=S3_Skill} @trigger ~onAttack
+  - healPercent{m=100;oh=false} @PIR{r=8} ~onSpawn
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - effect:bloodyScreen{d=40} @PIR{r=32} ~onTimer:20 <30%
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - skill{s=Crusade_Set_Count} ~onSpawn
+  - skill{s=Crusade_Reward} @trigger ~onDeath
+  - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  - actionmessage{m="&b已成功消除了一點官方的惡意，目前剩餘 &c<global.score.Crusade_Count>"} @trigger ~onDeath
+  Drops:
+  - Lottery_Ticket_Medal 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c第三惡意'
+  - '<target.name> 因 &c第三惡意 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在消除 &c<mob.name> &f時，意外身亡'
+  - '<target.name> 因未注意敵方血量而死'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - FALL 0
+  Options:
+   MovementSpeed: 0.42
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+   KnockbackResistance: 0.5
+來自官方的惡意_S4:
+  Type: zombie
+  Display: '&c來自官方的第四惡意'
+  Health: 200
+  Damage: 3
+  Armor: 0
+  Skills:
+  - sound{s=music1;repeat=10;repeatInterval=2520} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music1"} @self ~onDeath
+  #
+  - damage{a=3} @PIR{r=6} ~onSpawn
+  - addtag{t=Before_Attack_Tag} @self ~onSpawn
+  - addtag{t=WalkingDamage_1/8_Tag} @self ~onSpawn
+  - setlevel{a=set;l=10} @self ~onSpawn
+  - skill{s=Before_Attack} @self ~onAttack
+  - skill{s=WalkingDamage_1/8} ~onTimer:1
+  - potionclear @trigger ~onAttack
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  #
+  - skill{s=Crusade_Set_Count} ~onSpawn
+  - skill{s=Crusade_Reward} @trigger ~onDeath
+  - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  - actionmessage{m="&b已成功消除了一點官方的惡意，目前剩餘 &c<global.score.Crusade_Count>"} @trigger ~onDeath
+  Drops:
+  - Lottery_Ticket_Medal 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 2147483647
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c第四惡意'
+  - '<target.name> 因 &c第四惡意 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在消除 &c<mob.name> &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - FALL 0
+  Options:
+   MovementSpeed: 0.4
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+來自官方的惡意_S5:
+  Type: zombie
+  Display: '&c來自官方的第五惡意'
+  Health: 25
+  Damage: 3
+  Armor: 0
+  Skills:
+  - sound{s=music1;repeat=10;repeatInterval=2520} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music1"} @self ~onDeath
+  #
+  - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
+  - setlevel{a=set;l=1} @self ~onSpawn
+  - addtag{t=Resurrection_3_Tag} @self ~onSpawn
+  - skill{s=Resurrection_3} @trigger ~onDamaged
+  - summon{t=zombie;a=2;r=2} @self ~onTimer:200
+  - sound{s=entity.evoker.prepare_summon;v=2} @self ~onTimer:200
+  - summon{t=vex;a=2;r=2} @self ~onTimer:400
+  - skill{s=Sticky_Rot} @trigger ~onAttack
+  - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=20} ~onTimer:1
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - skill{s=Crusade_Set_Count} ~onSpawn
+  - skill{s=Crusade_Reward} @trigger ~onDeath
+  - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
+  - actionmessage{m="&b已成功消除了一點官方的惡意，目前剩餘 &c<global.score.Crusade_Count>"} @trigger ~onDeath
+  Drops:
+  - Lottery_Ticket_Medal 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 1.5
+   Health: 25
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  - totem_of_undying hand
+  KillMessages:
+  - '<target.name> 墮落於 &c第五惡意'
+  - '<target.name> 因 &c第五惡意 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在消除 &c<mob.name> &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - PROJECTILE 0.5
+  - FIRE -1
+  - FIRE_TICK -1
+  - FALL 0
+  Options:
+   MovementSpeed: 0.41
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   Glowing: true
+RandomSpawn_Core:
+  Type: zombie
+  Health: 0
+  Damage: 0
+  Armor: 2147483647
+  Skills:
+  - randomskill{skills=Summon1,Summon2,Summon3,Summon4,Summon5} ~onSpawn
+  - suicide ~onSpawn
+  Options:
+   MovementSpeed: 0
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   ApplyInvisibility: true
+#
+醫療兵:
+  Type: ARMOR_STAND
+  Display: '&c醫療兵'
+  Health: 1
+  Damage: 0
+  Armor: 0
+  Skills:
+  - skill{s=heal} @trigger ~onInteract
+  - skill{s=heal2} @trigger ~onInteract
+  - skill{s=heal3} @trigger ~onInteract
+  Drops:
+  - 
+  Options:
+   Invincible: true
+   Small: true
+   AlwaysShowName: true
+   HasGravity: false
+   HasArms: true
+   ItemHead: Boss_Head_WK
+   ItemBody: Boss_Item_Chest
+   ItemLegs: Boss_Item_Legs
+   ItemFeet: Boss_Item_Feet
+   Despawn: false
+   Interactable: false
+   HasBasePlate: false
+   Persistent: true
+#
+#鍛造
+Forging:
+  Type: ARMOR_STAND
+  Display: '&6&l鍛造台'
+  Health: 1
+  Damage: 0
+  Armor: 0
+  Skills:
+  - skill{s=Forge0} @trigger ~onInteract
+  - skill{s=Forge} @trigger ~onInteract
+  - skill{s=Forge2} @trigger ~onInteract
+  - skill{s=Forge3} @trigger ~onInteract
+  Disguise:
+    Type: BLOCK
+    Block: anvil
+    BlockData: 0
+    ShowName: true
+  Options:
+   PreventOtherDrops: true
+   AlwaysShowName: true
+   HasGravity: false
+   HasArms: true
+   Despawn: false
+   HasBasePlate: false
+   Persistent: true
+#
+buff:
+  Type: ARMOR_STAND
+  Display: '&cbuff'
+  Health: 1
+  Damage: 0
+  Armor: 0
+  Skills:
+  - skill{s=Challenge_Sword_Buff} @server ~onTimer:1
+  - skill{s=Challenge_Sword_Buff2} @server ~onTimer:1
+  - skill{s=Challenge_Sword_Buff3} @server ~onTimer:20
+  - skill{s=Challenge_AllItem_Buff} @server ~onTimer:1
+  Drops:
+  - 
+  Options:
+   Invincible: true
+   Small: true
+   AlwaysShowName: true
+   HasGravity: false
+   HasArms: true
+   ItemHead: Boss_Head_CC
+   ItemBody: Boss_Item_Chest
+   ItemLegs: Boss_Item_Legs
+   ItemFeet: Boss_Item_Feet
+   Despawn: false
+   Interactable: false
+   HasBasePlate: false
+   Persistent: true
+#抽獎
+Lottery:
+  Type: ARMOR_STAND
+  Display: '&6&l等價交換'
+  Health: 1
+  Damage: 0
+  Armor: 0
+  Skills:
+  - skill{s=Lottery0} @trigger ~onInteract
+  - skill{s=Lottery_Medal} @trigger ~onInteract
+  - skill{s=Lottery_Medal_2} @trigger ~onInteract
+  - skill{s=Lottery_Challenge} @trigger ~onInteract
+  - skill{s=Lottery_Challenge_2} @trigger ~onInteract
+  - skill{s=Lottery1} @trigger ~onInteract
+  - equip{item=air:1} @self ~onTimer:10
+  - equip{item=air:2} @self ~onTimer:10
+  - equip{item=air:3} @self ~onTimer:10
+  - equip{item=air:4} @self ~onTimer:10
+  - equip{item=air:5} @self ~onTimer:10
+  #Disguise:
+    #Type: BLOCK
+    #Block: dragon_egg
+    #BlockData: 0
+    #ShowName: true
+  Options:
+   Invincible: true
+   PreventOtherDrops: true
+   AlwaysShowName: true
+   HasGravity: false
+   HasArms: true
+   Despawn: false
+   HasBasePlate: false
+   Persistent: true
+#
+血量之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 血量之難關'
+  Health: 100
+  Damage: 0
+  Armor: 2147483647
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
+  - damage{a=2.5;ia=true;pk=true;pi=true} @self ~onAttack
+  - damage{a=10;ia=true;pk=true;pi=true} @trigger ~onAttack
+  - sound{s=block.fire.extinguish} @self ~onAttack
+  - skill{s=Sticky_Rot} @trigger ~onAttack
+  - potionclear @self ~onTimer:1
+  - potionclear @trigger ~onAttack
+  - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=32} ~onTimer:1
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d無敵-攻後自殘&e2.5%&d-附加消除 黏腐之地 前途茫茫 無法控制 無視擊退 無視減傷"} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c血量之難關'
+  - '<target.name> 因 &c血量之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c血量之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - PROJECTILE 0
+  - FALL 0
+  - THORNS 0
+  Options:
+   MovementSpeed: 0.4
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+   KnockbackResistance: 1
+防禦之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 防禦之難關'
+  Health: 100
+  Damage: 50
+  Armor: 0
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - sound{s=entity.player.attack.crit} @PIR{r=32} ~onSpawn
+  - sethealth{a=1} @PIR{r=32} ~onSpawn
+  - potion{t=damage_resistance;d=2147483647;hasParticles=false;l=4;force=true} @self ~onSpawn
+  - modifyglobalscore{o=IR;a=SET;v=1} ~onSpawn
+  - barCreate{n=IR;d="&b敵人減傷狀態:<&sp>100%";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
+  - skill{s=Injury_Reduction_1} @self ~onAttack
+  - skill{s=Injury_Reduction_2} @self ~onAttack
+  - skill{s=Injury_Reduction_3} @self ~onAttack
+  - skill{s=Injury_Reduction_4} @self ~onAttack
+  - skill{s=Injury_Reduction_5} @self ~onAttack
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d敵生-命懸一線 100%減傷盾-越攻越弱"} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c防禦之難關'
+  - '<target.name> 因 &c防禦之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c防禦之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - FALL 0
+  Options:
+   MovementSpeed: 0.43
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+攻擊之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 攻擊之難關'
+  Health: 10
+  Damage: 0
+  Armor: 0
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - barCreate{n=IR;d="&b敵人減傷狀態:<&sp>90%";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
+  - damagepercent{p=2;ia=true;pk=true;pi=true} @trigger ~onAttack
+  - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=32} ~onTimer:1
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d減傷&e90% &d前途茫茫 &c一擊必殺 &d無視擊退"} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c攻擊之難關'
+  - '<target.name> 因 &c攻擊之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c攻擊之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - ENTITY_ATTACK 0.1
+  - FIRE 0.1
+  - FIRE_TICK 0.1
+  - PROJECTILE 0.1
+  - FALL 0
+  - THORNS 0.1
+  - ENTITY_EXPLOSION 0.1
+  - ENTITY_SWEEP_ATTACK 0.1
+  - POISON 0.1
+  - MAGIC 0.1
+  Options:
+   MovementSpeed: 0.45
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+   KnockbackResistance: 1
+回復之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 回復之難關'
+  Health: 87
+  Damage: 0
+  Armor: 0
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - sound{s=entity.player.attack.crit} @PIR{r=32} ~onSpawn
+  - sethealth{a=1} @PIR{r=32} ~onSpawn
+  - damagepercent{p=0.3;ia=true;pk=true} @trigger ~onAttack
+  - skill{s=lightning_20s_1d_0c} @trigger ~onAttack
+  - removebuff{name=lightning} @trigger ~onDeath
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d敵生-命懸一線 扣血&e30% &d攻後-連續電擊&e20&d秒 "} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c回復之難關'
+  - '<target.name> 因 &c回復之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c回復之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - FALL 0
+  Options:
+   MovementSpeed: 0.42
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+方向之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 方向之難關'
+  Health: 87
+  Damage: 5
+  Armor: 0
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
+  - skill{s=Sticky_Rot} @trigger ~onAttack
+  - summon{t=zombie;a=2;r=2} @self ~onTimer:100
+  - summon{t=skeleton;a=2;r=2} @self ~onTimer:100
+  - sound{s=entity.evoker.prepare_summon;v=2} @self ~onTimer:100
+  - summon{t=vex;a=2;r=2} @self ~onTimer:200
+  - blackscreen{d=60} @PIR{r=16} ~onAttack
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d攻後-前途茫茫-強 召喚小怪 黏腐之地 遠攻吸收化血"} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c方向之難關'
+  - '<target.name> 因 &c方向之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c方向之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - PROJECTILE -1
+  - FALL 0
+  Options:
+   MovementSpeed: 0.45
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+藥水之難關:
+  Type: zombie
+  Display: '&c極限挑戰 - 藥水之難關'
+  Health: 100
+  Damage: 5
+  Armor: 2147483647
+  Skills:
+  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - command{c="stopsound @a * music2"} @self ~onDeath
+  #
+  - barCreate{n=IR;d="&b玩家所需效果:<&sp>中毒<&sp>虛弱";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
+  - skill{s=Effect_Y} @trigger ~onDamaged
+  - skill{s=Effect_N1} @trigger ~onDamaged
+  - skill{s=Effect_N2} @trigger ~onDamaged
+  - potionclear @self ~onTimer:1
+  - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=32} ~onTimer:1
+  - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1
+  #
+  - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
+  - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d無敵-附加效果盾-達成自殘&e2.5%&d-未達成回復&e2.5% &d前途茫茫 無視擊退 無法控制"} @trigger ~onInteract
+  Drops:
+  - Lottery_Ticket_Challenge 1 0.15
+  - exp 100-400
+  - money 750-1000
+  LevelModifiers:
+   Damage: 0
+   Health: 0
+   Armor: 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  BossBar:
+    Enabled: true
+    Title: '<mob.name>'
+    Range: 60
+    Color: RED
+    Style: SEGMENTED_10
+    CreateFog: true
+    DarkenSky: true
+  Equipment:
+  - Boss_Head_WK head
+  - Boss_Item_Chest chest
+  - Boss_Item_Legs legs
+  - Boss_Item_Feet feet
+  KillMessages:
+  - '<target.name> 墮落於 &c效果之難關'
+  - '<target.name> 因 &c效果之難關 &f而死'
+  - '<target.name> 無法抵擋 &c<mob.name>'
+  - '<target.name> 在挑戰 &c藥水之難關 &f時，意外身亡'
+  - '&c<target.name> &4，你已經盡力了'
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - PROJECTILE 0
+  - FALL 0
+  - THORNS 0
+  Options:
+   MovementSpeed: 0.4
+   AlwaysShowName: true
+   PreventOtherDrops: true
+   PreventRandomEquipment: true
+   Silent: true
+   PreventJockeyMounts: true
+   Glowing: true
+   KnockbackResistance: 1
+#
