@@ -1,0 +1,577 @@
+# Made by cc_chang
+# © 2020-2021 cc_chang. All rights reserved.
+#
+#自殺
+suicide:
+  Skills:
+  - effect:explosion @self
+  - delay 4
+  - suicide
+#
+#黏腐
+Sticky_Rot:
+  Conditions:
+  - hastag{t=Sticky_Rot_Tag}
+  Skills:
+  - effect:blockmask{m=cobweb;d=1200} @RLNTE{a=8;r=9;s=1;minr=3}
+#
+#連擊盾
+Combo_50:
+  Conditions:
+  - Burning
+  - hastag{t=50Combo_Tag}
+  - level 1to51
+  Skills:
+  - setlevel{a=subtract;l=1}
+  - sound{s=block}
+Combo_30:
+  Conditions:
+  - hastag{t=30Combo_Tag}
+  - level 1to31
+  Skills:
+  - setlevel{a=subtract;l=1}
+  - sound{s=block}
+Combo_20:
+  Conditions:
+  - hastag{t=20Combo_Tag}
+  - level 1to21
+  Skills:
+  - setlevel{a=subtract;l=1}
+  - sound{s=block}
+#
+#重置連擊
+ReCount_50:
+  Conditions:
+  - level 0
+  Skills:
+  - setlevel{a=set;l=51}
+ReCount_30:
+  Conditions:
+  - level 0
+  Skills:
+  - setlevel{a=set;l=31}
+ReCount_20:
+  Conditions:
+  - level 0
+  Skills:
+  - setlevel{a=set;l=21}
+#
+#受攻盾
+Atk_35:
+  Conditions:
+  - hastag{t=35Atk_Tag}
+  - level 1to36
+  Skills:
+  - setlevel{a=subtract;l=1}
+Atk_10:
+  Conditions:
+  - hastag{t=10Atk_Tag}
+  - level 1to11
+  Skills:
+  - setlevel{a=subtract;l=1}
+#
+#反擊
+Counterattack_50%_1:
+  Conditions:
+  - hastag{t=Counterattack_50%_1_Tag}
+  Skills:
+  - sound{s=
+  - basedamage{m=0.5;ia=true;pk=true;pi=true}
+Counterattack_50%_2:
+  Conditions:
+  - hastag{t=Counterattack_50%_2_Tag}
+  Skills:
+  - basedamage{m=0.5;ia=true;pk=true;pi=true;repeat=1;repeatInterval=5}
+Counterattack_100%_1:
+  Conditions:
+  - hastag{t=Counterattack_100%_1_Tag}
+  Skills:
+  - basedamage{m=1;ia=true;pk=true;pi=true}
+Counterattack_100%_2:
+  Conditions:
+  - hastag{t=Counterattack_100%_2_Tag}
+  Skills:
+  - basedamage{m=1;ia=true;pk=true;pi=true;repeat=1;repeatInterval=5}
+Counterattack_150%_1:
+  Conditions:
+  - hastag{t=Counterattack_150%_1_Tag}
+  Skills:
+  - basedamage{m=1.5;ia=true;pk=true;pi=true}
+Counterattack_150%_2:
+  Conditions:
+  - hastag{t=Counterattack_150%_2_Tag}
+  Skills:
+  - basedamage{m=1.5;ia=true;pk=true;pi=true;repeat=1;repeatInterval=5}
+Counterattack_200%_1:
+  Conditions:
+  - hastag{t=Counterattack_200%_1_Tag}
+  Skills:
+  - basedamage{m=2;ia=true;pk=true;pi=true}
+Counterattack_200%_2:
+  Conditions:
+  - hastag{t=Counterattack_200%_2_Tag}
+  Skills:
+  - basedamage{m=2;ia=true;pk=true;pi=true;repeat=1;repeatInterval=5}
+#
+#致命步伐
+WalkingDamage_1/8:
+  Cooldown: 1
+  Conditions:
+  - moving true
+  - hastag{t=WalkingDamage_1/8_Tag}
+  Skills:
+  - sound{s=entity.player.hurt_sweet_berry_bush} @PIR{r=8}
+  - damage{a=1;ia=true;pk=true;pi=true} @PIR{r=8}
+WalkingDamage_3/16:
+  Cooldown: 1
+  Conditions:
+  - moving true
+  - hastag{t=WalkingDamage_3/16_Tag}
+  Skills:
+  - sound{s=entity.player.hurt_sweet_berry_bush} @PIR{r=16}
+  - damage{a=3;ia=true;pk=true;pi=true} @PIR{r=16}
+WalkingDamage_5/16:
+  Cooldown: 1
+  Conditions:
+  - moving true
+  - hastag{t=WalkingDamage_5/16_Tag}
+  Skills:
+  - sound{s=entity.player.hurt_sweet_berry_bush} @PIR{r=16}
+  - damage{a=5;ia=true;pk=true;pi=true} @PIR{r=16}
+#
+#死亡倒數
+Death_10:
+  TargetConditions:
+  - hasbuff{name=Death} false
+  Skills:
+  - buff{buffName=Death;duration=200;onStartSkill=DeathStart;onEndSkill=DeathEnd}
+DeathStart:
+  Skills:
+  - sound{s=entity.elder_guardian.curse}
+  - potion{t=unluck;d=100;hasParticles=false;l=0}
+DeathEnd:
+  TargetConditions:
+  - hasbuff{name=Death} true
+  Skills:
+  - damagepercent{p=1;ia=true;pk=true;pi=true}
+#
+#不倒意志，復活
+NoDeath:
+  Conditions:
+  - hastag{t=NoDeath_Tag} true
+  - holding{m=TOTEM_OF_UNDYING} false
+  Skills:
+  - setlevel{a=set;l=1} @self
+  - effect:explosion @self
+  - removetag{t=NoDeath_Tag} @self
+#
+#連續電擊
+lightning_5s_1d_10c:
+  Cooldown: 10
+  TargetConditions:
+  - hasbuff{name=lightning} false
+  Skills:
+  - buff{buffName=lightning;duration=100;interval=20;onStartSkill=lightningStart_5s;onTickSkill=lightningTick_1d}
+lightning_20s_1d_0c:
+  TargetConditions:
+  - hasbuff{name=lightning} false
+  Skills:
+  - buff{buffName=lightning;duration=400;interval=20;onStartSkill=lightningStart_20s;onTickSkill=lightningTick_1d}
+#---
+lightningStart_5s:
+  Skills:
+  - sound{s=entity.elder_guardian.curse}
+  - potion{t=luck;d=100;hasParticles=false;l=0}
+lightningStart_20s:
+  Skills:
+  - sound{s=entity.elder_guardian.curse}
+  - potion{t=luck;d=400;hasParticles=false;l=0}
+#---
+lightningTick_1d:
+  Skills:
+  - sound{s=item.trident.thunder}
+  - lightning{d=1}
+lightningTick_2d:
+  Skills:
+  - sound{s=item.trident.thunder}
+  - lightning{d=2}
+#
+#無限復活
+IR:
+  Conditions:
+  - hastag{t=IR_Tag} true
+  - holding{m=TOTEM_OF_UNDYING} false
+  Skills:
+  - equip{item=totem_of_undying:0}
+  - healpercent{m=1;overheal=false} @self
+  - effect:explosion @self
+#
+#三次復活-狂暴
+Resurrection_3:
+  Conditions:
+  - hastag{t=Resurrection_3_Tag} true
+  - holding{m=TOTEM_OF_UNDYING} false
+  - level 1-3
+  Skills:
+  - equip{item=totem_of_undying:0}
+  - healpercent{m=1;overheal=false} @self
+  - effect:explosion @self
+  - setlevel{a=add;l=1} @self
+#
+#自爆
+Self_Destruct_5d:
+  Skills:
+  - sound{s=boom2} @self
+  - delay 40
+  - effect:explosion @self
+  - damage{a=5;ia=true;pk=true;pi=true} @PIR{r=8}
+#
+#攻前盾
+Before_Attack:
+  Conditions:
+  - hastag{t=Before_Attack_Tag} true
+  Skills:
+  - setlevel{a=set;l=0} @self
+  - removetag{t=Before_Attack_Tag} @self
+#
+#100%減傷-越攻越弱
+Injury_Reduction_1:
+  Conditions:
+  - Globalscore{o=IR;v=1}
+  Skills:
+  - barSet{n=IR;d="&b敵人減傷狀態:<&sp>80%";v=0.8} @self
+  - potion{t=damage_resistance;d=2147483647;hasParticles=false;l=3;force=true}
+  - delay 15
+  - modifyglobalscore{o=IR;a=add;v=1}
+Injury_Reduction_2:
+  Conditions:
+  - Globalscore{o=IR;v=2}
+  Skills:
+  - barSet{n=IR;d="&b敵人減傷狀態:<&sp>60%";v=0.6} @self
+  - potion{t=damage_resistance;d=2147483647;hasParticles=false;l=2;force=true}
+  - delay 15
+  - modifyglobalscore{o=IR;a=add;v=1}
+Injury_Reduction_3:
+  Conditions:
+  - Globalscore{o=IR;v=3}
+  Skills:
+  - barSet{n=IR;d="&b敵人減傷狀態:<&sp>40%";v=0.4} @self
+  - potion{t=damage_resistance;d=2147483647;hasParticles=false;l=1;force=true}
+  - delay 15
+  - modifyglobalscore{o=IR;a=add;v=1}
+Injury_Reduction_4:
+  Conditions:
+  - Globalscore{o=IR;v=4}
+  Skills:
+  - barSet{n=IR;d="&b敵人減傷狀態:<&sp>20%";v=0.2} @self
+  - potion{t=damage_resistance;d=2147483647;hasParticles=false;l=0;force=true}
+  - delay 15
+  - modifyglobalscore{o=IR;a=add;v=1}
+Injury_Reduction_5:
+  Conditions:
+  - Globalscore{o=IR;v=5}
+  Skills:
+  - barSet{n=IR;d="&b敵人減傷狀態:<&sp>0%";v=0.01} @self
+  - potionclear
+#
+#藥水
+Effect_Y:
+  TargetConditions:
+  - haspotioneffect{t=POISON} true
+  - haspotioneffect{t=WEAKNESS} true
+  Skills:
+  - damage{a=5;ia=true;pk=true;pi=true} @self
+Effect_N1:
+  TargetConditions:
+  - haspotioneffect{t=WEAKNESS} false
+  Skills:
+  - heal{a=2.5;oh=false} @self
+Effect_N2:
+  TargetConditions:
+  - haspotioneffect{t=POISON} false
+  Skills:
+  - heal{a=2.5;oh=false} @self
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+S3_Skill:
+  Cooldown: 2
+  Skills:
+  - damage{a=2;ia=true;pk=true} @trigger ~onAttack >90%
+  - damage{a=2.5;ia=true;pk=true} @trigger ~onAttack =70%-90%
+  - damage{a=3;ia=true;pk=true} @trigger ~onAttack =50%-70%
+  - damage{a=3.5;ia=true;pk=true} @trigger ~onAttack =40%-50%
+  - damage{a=4;ia=true;pk=true} @trigger ~onAttack =30%-40%
+  - damage{a=4.5;ia=true;pk=true;repeat=1;repeatInterval=5} @trigger ~onAttack =10%-30%
+  - damage{a=5.5;ia=true;pk=true;repeat=1;repeatInterval=5} @trigger ~onAttack <10%
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+heal:
+  Cooldown: 1
+  TargetConditions:
+  - crouching true
+  - holding{m=DIAMOND_PICKAXE} true
+  Skills:
+  - command{c="mm egg give <target.name> 醫療兵"}
+  - sound{s=block.stone.break}
+  - remove @self
+heal2:
+  TargetConditions:
+  - crouching false
+  - hasbuff{name=heal} false
+  Skills:
+  - buff{buffName=heal;duration=72000;onStartSkill=heal_start}
+heal_start:
+  Skills:
+  - healPercent{m=0.5;oh=true}
+  - message{m="&a&l成功使用此技能 !"}
+heal3:
+  TargetConditions:
+  - crouching false
+  - hasbuff{name=heal} true
+  Skills:
+  - message{m="&c&l此技能尚在冷卻中 !"}
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+Forge0:
+  TargetConditions:
+  - crouching false
+  Skills:
+  - message{m="&e-------------------&6鍛造系統 使用說明&e-------------------"}
+  - message{m="&e使用 &6蹲下+右鍵 &e可以放入武器"}
+  - message{m="&e放入武器後，使用 &6蹲下+右鍵 &e可以放入強化石"}
+  - message{m="&e過程中 &6空手+右鍵 &e可以拿出武器(強化石累積數量會保留)"}
+  - message{m=""}
+  - message{m="&e適用武器:"}
+  - message{m="&e > &5&lロンギヌスの槍 &c● &5&lプライマリフォーム"}
+  - message{m="&e---------------------------------------------------------"}
+Forge:
+  Conditions:
+  - wearing{s=HAND;m=Medal_Global;Cl=true} false
+  TargetConditions:
+  - crouching true
+  - score{o=Forge;v=51} false
+  - score{o=Forge;v=50} false
+  - wearing{s=HAND;m=Medal_Global;Cl=true} true
+  Skills:
+  - sound{s=block.anvil.land;p=2}
+  - sendtitle{title="&a『已放置武器』";subtitle="&a強化石:&c <trigger.score.Forge>&e/50";d=60}
+Forge2:
+  Conditions:
+  - wearing{s=HAND;m=Medal_Global;Cl=true} true
+  TargetConditions:
+  - crouching true
+  - score{o=Forge;v=50} false
+  - wearing{s=HAND;m=Forge_Stone;Cl=true} true
+  Skills:
+  - sound{s=block.anvil.place}
+  - modifytargetscore{o=Forge;a=add;v=1}
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a強化石:&c <trigger.score.Forge>&e/50";d=20}
+Forge3:
+  Cooldown: 15
+  TargetConditions:
+  - score{o=Forge;v=50} true
+  Skills:
+  - equip{item=air:0} @self
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ &c■ ■ ■ ■ ■";d=20}
+  - sound{s=block.anvil.place;p=0.1}
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ ■ &c■ ■ ■ ■";d=20}
+  - sound{s=block.anvil.place;p=0.1}
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ ■ ■ &c■ ■ ■";d=20}
+  - sound{s=block.anvil.place;p=0.1}
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ ■ ■ ■&c ■ ■";d=20}
+  - sound{s=block.anvil.place;p=0.1}
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ ■ ■ ■ ■ &c■";d=20}
+  - sound{s=block.anvil.place;p=0.1}
+  - delay 20
+  - effect:flames @self
+  - sendtitle{title="&6&l鍛造中...";subtitle="&a■ ■ ■ ■ ■ ■";d=20}
+  - sound{s=entity.experience_orb.pickup;p=0.5}
+  - delay 20
+  - effect:flames @self
+  - modifytargetscore{o=Forge;a=set;v=0}
+  - sendtitle{title="&d&l強化成功";subtitle="&6恭喜你 !";d=20}
+  - command{c="mm items give <target.name> Longinus_LV2"}
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+Lottery0:
+  TargetConditions:
+  - crouching false
+  Skills:
+  - message{m="&e-------------&6抽獎系統 使用說明&e-------------"}
+  - message{m="&e使用 &6右鍵 &e可以放入抽獎卷"}
+  - message{m="&e放入抽獎卷後，使用 &6蹲下+右鍵 &e即可進行抽獎"}
+  - message{m="&c請確保背包有空間放置獎品 !"}
+  - message{m="&c若發現抽完無獲得獎品，代表抽到現金 !"}
+  - message{m=""}
+  - message{m="&e適用物品:"}
+  - message{m="&e<&sp>> &6&l抽獎卷-討伐任務&c<&sp>(&a<trigger.score.Medal>/30<&sp>&c次後必得<&sp>&6&l來自官方的劍&c)"}
+  - message{m="&e<&sp>> &d&l抽獎卷-挑戰任務&c<&sp>(&a<trigger.score.Challenge>/40<&sp>&c次後必得<&sp>&d&l百戰百勝的劍&c)"}
+  - message{m="&e---------------------------------------------"}
+Lottery_Medal:
+  Cooldown: 7
+  Conditions:
+  - wearing{s=HAND;m=Lottery_Ticket_Medal;Cl=true} true
+  TargetConditions:
+  - crouching true
+  - score{o=Medal;v=30} false
+  Skills:
+  - equip{item=air:0} @self
+  - potion{t=damage_resistance;d=140;hasParticles=false;l=68;force=true}
+  - modifytargetscore{o=Medal;a=add;v=1}
+  - e:flames{repeat=6;repeatInterval=20} @self
+  - sound{s=lottery} @self
+  - delay 125
+  - sound{s=entity.experience_orb.pickup;p=0.5}
+  - command{c="mm items give <target.name> Medal_Lottery"}
+Lottery_Medal_2:
+  Cooldown: 7
+  Conditions:
+  - wearing{s=HAND;m=Lottery_Ticket_Medal;Cl=true} true
+  TargetConditions:
+  - crouching true
+  - score{o=Medal;v=30} true
+  Skills:
+  - equip{item=air:0} @self
+  - potion{t=damage_resistance;d=140;hasParticles=false;l=68;force=true}
+  - modifytargetscore{o=Medal;a=set;v=0}
+  - e:flames{repeat=6;repeatInterval=20} @self
+  - sound{s=lottery} @self
+  - delay 125
+  - sound{s=entity.experience_orb.pickup;p=0.5}
+  - command{c="mm items give <target.name> Medal_Sword"}
+Lottery_Challenge:
+  Cooldown: 7
+  Conditions:
+  - wearing{s=HAND;m=Lottery_Ticket_Challenge;Cl=true} true
+  TargetConditions:
+  - crouching true
+  - score{o=Challenge;v=40} false
+  Skills:
+  - equip{item=air:0} @self
+  - potion{t=damage_resistance;d=140;hasParticles=false;l=68;force=true}
+  - modifytargetscore{o=Challenge;a=add;v=1}
+  - e:flames{repeat=6;repeatInterval=20} @self
+  - sound{s=lottery} @self
+  - delay 125
+  - sound{s=entity.experience_orb.pickup;p=0.5}
+  - command{c="mm items give <target.name> Challenge_Lottery"}
+Lottery_Challenge_2:
+  Cooldown: 7
+  Conditions:
+  - wearing{s=HAND;m=Lottery_Ticket_Challenge;Cl=true} true
+  TargetConditions:
+  - crouching true
+  - score{o=Challenge;v=40} true
+  Skills:
+  - equip{item=air:0} @self
+  - potion{t=damage_resistance;d=140;hasParticles=false;l=68;force=true}
+  - modifytargetscore{o=Challenge;a=set;v=0}
+  - e:flames{repeat=6;repeatInterval=20} @self
+  - sound{s=lottery} @self
+  - delay 125
+  - sound{s=entity.experience_orb.pickup;p=0.5}
+  - command{c="mm items give <target.name> Challenge_Sword"}
+Lottery1:
+  Conditions:
+  - wearing{s=HAND;m=Lottery_Ticket_Medal;Cl=true} false
+  - wearing{s=HAND;m=Lottery_Ticket_Challenge;Cl=true} false
+  TargetConditions:
+  - crouching true
+  Skills:
+  - equip{item=air:0} @self
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+Challenge_Sword_Buff:
+  TargetConditions:
+  - wearing{s=HAND;m=Challenge_Sword;Cl=true} true
+  Skills:
+  - potion{t=INCREASE_DAMAGE;d=2;hasParticles=false;l=1;force=true}
+  - e:flames{cooldown=1}
+Challenge_Sword_Buff2:
+  TargetConditions:
+  - wearing{s=OFFHAND;m=Challenge_Sword;Cl=true} true
+  Skills:
+  - potion{t=blindness;d=0;hasParticles=false;l=0;force=true}
+Challenge_Sword_Buff3:
+  TargetConditions:
+  - wearing{s=OFFHAND;m=Challenge_Sword;Cl=true} true
+  - wearing{s=HAND;m=Challenge_Sword;Cl=true} false
+  - moving true
+  Skills:
+  - sound{s=entity.player.hurt_sweet_berry_bush}
+  - damage{a=0.5;ia=true;pk=true;pi=true}
+Challenge_AllItem_Buff:
+  TargetConditions:
+  - wearing{s=OFFHAND;m=Challenge_Sword;Cl=true} true
+  - wearing{s=HAND;m=Challenge_Sword;Cl=true} true
+  - wearing{s=HEAD;m=Challenge_Head} true
+  - wearing{s=CHEST;m=Challenge_Chest} true
+  - wearing{s=LEGS;m=Challenge_Legs} true
+  - wearing{s=FEET;m=Challenge_Feet} true
+  Skills:
+  - potion{t=POISON;d=0;hasParticles=false;l=1;force=true}
+  - potion{t=jump;d=2;hasParticles=false;l=128;force=true}
+  - e:ender{cooldown=1}
+#-----------------------------------------------I Am Separate Line-----------------------------------------------
+#討伐戰系統
+# DON'T CHANGE ANYTHING
+#scoreboard name: Crusade_Count
+#scoreboard trigger name : __GLOBAL__
+Crusade_Set_Count:
+  Conditions:
+  - Globalscore{o=Crusade_Count;v=0}
+  Skills:
+  - modifyglobalscore{o=Crusade_Count;a=SET;v=200}
+Crusade_Reward:
+  Conditions:
+  - Globalscore{o=Crusade_Count;v=1}
+  Skills:
+  #- command{c="essentials:bcast &6&l已完成討伐任務，恭喜全服玩家獲得討伐獎勵，建議截圖作為證明"}
+  #- command{c="essentials:bcast &6&l(獎勵將於活動後統一發放)"}
+  #- command{c="essentials:bcast &c玩家依舊可以持續討伐至活動結束"}
+  #- command{c="essentials:bcast &c(註:討伐戰系統將持續計算)"}
+Summon1:
+  Skills:
+  - command{c="mm m kill 來自官方的惡意_S1"}
+  - command{c="mm m kill 來自官方的惡意_S2"}
+  - command{c="mm m kill 來自官方的惡意_S3"}
+  - command{c="mm m kill 來自官方的惡意_S4"}
+  - command{c="mm m kill 來自官方的惡意_S5"}
+  - summon{t=來自官方的惡意_S1;a=1;r=0} @self
+Summon2:
+  Skills:
+  - command{c="mm m kill 來自官方的惡意_S1"}
+  - command{c="mm m kill 來自官方的惡意_S2"}
+  - command{c="mm m kill 來自官方的惡意_S3"}
+  - command{c="mm m kill 來自官方的惡意_S4"}
+  - command{c="mm m kill 來自官方的惡意_S5"}
+  - summon{t=來自官方的惡意_S2;a=1;r=0} @self
+Summon3:
+  Skills:
+  - command{c="mm m kill 來自官方的惡意_S1"}
+  - command{c="mm m kill 來自官方的惡意_S2"}
+  - command{c="mm m kill 來自官方的惡意_S3"}
+  - command{c="mm m kill 來自官方的惡意_S4"}
+  - command{c="mm m kill 來自官方的惡意_S5"}
+  - summon{t=來自官方的惡意_S3;a=1;r=0} @self
+Summon4:
+  Skills:
+  - command{c="mm m kill 來自官方的惡意_S1"}
+  - command{c="mm m kill 來自官方的惡意_S2"}
+  - command{c="mm m kill 來自官方的惡意_S3"}
+  - command{c="mm m kill 來自官方的惡意_S4"}
+  - command{c="mm m kill 來自官方的惡意_S5"}
+  - summon{t=來自官方的惡意_S4;a=1;r=0} @self
+Summon5:
+  Skills:
+  - command{c="mm m kill 來自官方的惡意_S1"}
+  - command{c="mm m kill 來自官方的惡意_S2"}
+  - command{c="mm m kill 來自官方的惡意_S3"}
+  - command{c="mm m kill 來自官方的惡意_S4"}
+  - command{c="mm m kill 來自官方的惡意_S5"}
+  - summon{t=來自官方的惡意_S5;a=1;r=0} @self

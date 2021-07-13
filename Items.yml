@@ -1,0 +1,743 @@
+# Made by cc_chang
+# © 2020-2021 cc_chang. All rights reserved.
+#
+Boss_Item_Head:
+  Id: diamond_helmet
+  Data: 0
+  Display: ''
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Options:
+   Unbreakable: true
+Boss_Item_Chest:
+  Id: diamond_chestplate
+  Data: 0
+  Display: ''
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Options:
+   Unbreakable: true
+Boss_Item_Legs:
+  Id: diamond_leggings
+  Data: 0
+  Display: ''
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Options:
+   Unbreakable: true
+Boss_Item_Feet:
+  Id: diamond_boots
+  Data: 0
+  Display: ''
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Options:
+   Unbreakable: true
+#------------------------------------------I Am Separate Line------------------------------------------
+Mob_Item_OffHand_axe:
+  Id: diamond_axe
+  Data: 0
+  Display: ''
+  Enchantments:
+  - DAMAGE_ALL:5
+  Options:
+   Unbreakable: true
+Mob_Item_OffHand_sword:
+  Id: diamond_sword
+  Data: 0
+  Display: ''
+  Enchantments:
+  - DAMAGE_ALL:5
+  Options:
+   Unbreakable: true
+#------------------------------------------I Am Separate Line------------------------------------------
+Boss_Head:
+  Id: player_head
+  Data: 0
+  Display: ''
+  Options:
+   Unbreakable: true
+   Player: andy891203345
+Boss_Head_WK:
+  Id: player_head
+  Data: 0
+  Display: ''
+  Options:
+   Unbreakable: true
+   Player: WeeKee
+Boss_Head_CC:
+  Id: player_head
+  Data: 0
+  Display: ''
+  Options:
+   Unbreakable: true
+   Player: cc_chang
+#
+#端午節
+Zongye:
+  Id: kelp
+  Data: 0
+  Display: '&a粽葉'
+  Lore:
+  - ''
+  - '&d粽葉可以幹嘛 ?!'
+  - '&d那當然是包粽子阿!'
+  Enchantments:
+  - DURABILITY:3
+  Attributes:
+   OffHand:
+    MovementSpeed: 10%
+  Hide:
+  - ENCHANTS
+Zongzi:
+  Id: glowstone_dust
+  Data: 0
+  Display: '&2&l粽子'
+  Lore:
+  - ''
+  - '&d不用懷疑 我就是粽子'
+  - '&d或許我有被某種神秘力量加持過?'
+  - ''
+  - '&c阿你可以幹嘛?'
+  - '&d嗯...換些稀有的物品吧'
+  Enchantments:
+  - DURABILITY:3
+  Attributes:
+   OffHand:
+    Damage: 1
+    MovementSpeed: 50%
+  Hide:
+  - ENCHANTS
+Zongzi_Stuffing:
+  Id: orange_dye
+  Data: 0
+  Display: '&6&l粽子餡'
+  Lore:
+  - ''
+  - '&d不用懷疑 我就是粽子餡'
+  - '&d或許我有被某種神秘力量加持過?'
+  - ''
+  - '&c阿你可以幹嘛?'
+  - '&d讓我跟粽葉合在一起會有奇效呦~'
+  Enchantments:
+  - DURABILITY:3
+  Attributes:
+   OffHand:
+    Damage: 10%
+  Hide:
+  - ENCHANTS
+#------------------------------------------I Am Separate Line------------------------------------------
+Medal:
+  Id: paper
+  Data: 0
+  Display: '&6&l功勳'
+  Lore:
+  - ''
+  - '&d蒐集此物品，能兌換珍貴物品呦'
+  - ''
+  Enchantments:
+  - DURABILITY:3
+  Hide:
+  - ENCHANTS
+  Options:
+   Model: 1
+Medal_Head:
+  Id: diamond_helmet
+  Data: 0
+  Display: '&6&l來自官方的頭盔'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - PROTECTION_FIRE:4
+  - WATER_WORKER:1
+  - OXYGEN:3
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Head:
+      Armor: 3
+      ArmorToughness: 2
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Chest:
+  Id: diamond_chestplate
+  Data: 0
+  Display: '&6&l來自官方的胸甲'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - PROTECTION_FIRE:4
+  - THORNS:3
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Chest:
+      Armor: 8
+      ArmorToughness: 2
+      Health: 2
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Legs:
+  Id: diamond_leggings
+  Data: 0
+  Display: '&6&l來自官方的護腿'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - PROTECTION_FIRE:4
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Legs:
+      Armor: 6
+      ArmorToughness: 2
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Feet:
+  Id: diamond_boots
+  Data: 0
+  Display: '&6&l來自官方的靴子'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - PROTECTION_FIRE:4
+  - DEPTH_STRIDER:3
+  - PROTECTION_FALL:4
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Feet:
+      Armor: 3
+      ArmorToughness: 2
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Totem:
+  Id: totem_of_undying
+  Data: 0
+  Display: '&6&l來自官方的圖騰'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - VANISHING_CURSE:1
+  Attributes:
+    MainHand:
+      Health: 1
+      MovementSpeed: 0.1
+    OffHand:
+      Health: 1
+      MovementSpeed: 0.1
+Medal_Shield:
+  Id: shield
+  Data: 0
+  Display: '&6&l來自官方的盾牌'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - DURABILITY:3
+  - MENDING:1
+  Attributes:
+    OffHand:
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Sword:
+  Id: diamond_sword
+  Data: 0
+  Display: '&6&l來自官方的劍'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - KNOCKBACK:2
+  - LOOT_BONUS_MOBS:3
+  - SWEEPING_EDGE:3
+  - MENDING:1
+  Attributes:
+    MainHand:
+      AttackDamage: 13
+      MaxHealth: 1
+      Movement_Speed: 0.1
+      AttackSpeed: -0.6
+  Options:
+   Repairable: false
+Medal_Bow:
+  Id: bow
+  Data: 0
+  Display: '&6&l來自官方的弓'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - ARROW_DAMAGE:8
+  - ARROW_KNOCKBACK:2
+  - ARROW_FIRE:2
+  - ARROW_INFINITE:1
+  - MENDING:1
+  Attributes:
+    MainHand:
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Trident:
+  Id: trident
+  Data: 0
+  Display: '&6&l來自官方的三叉戟'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - LOYALTY:5
+  - IMPALING:5
+  - CHANNELING:1
+  - MENDING:1
+  Attributes:
+    MainHand:
+      Damage: 9
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Pick:
+  Id: diamond_pickaxe
+  Data: 0
+  Display: '&6&l來自官方的挖掘鎬'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - LOOT_BONUS_BLOCKS:5
+  - DIG_SPEED:5
+  - MENDING:1
+  Attributes:
+    MainHand:
+      Health: 1
+      MovementSpeed: 0.1
+  Options:
+   Repairable: false
+Medal_Global:
+  Id: trident
+  Data: 0
+  Display: '&5&lロンギヌスの槍 &c● &5&lプライマリフォーム'
+  Lore:
+  - ''
+  - '&4======================稀有度======================'
+  - '                     &e★ ★ &f☆ ☆ ☆                     '
+  - '&4=======================介紹======================='
+  - '&5&lロンギヌスの槍&c 具有強大的力量，能刺穿敵人身體'
+  - '&c據說它的誕生是用來壓制神的力量'
+  - '&c最初有兩把，而其中一把卻不知所蹤...'
+  - '&c聽說是用來對付敵人而沉入大海...?'
+  - '&4=================================================='
+  - '&3&o初級型態'
+  Enchantments:
+  - LOYALTY:5
+  - IMPALING:5
+  - MENDING:1
+  Attributes:
+    MainHand:
+      AttackDamage: 5
+      MaxHealth: 5
+      Movement_Speed: -0.6
+    OffHand:
+      Movement_Speed: -0.6
+  Options:
+   Repairable: false
+Medal_Mending:
+  Id: enchanted_book
+  Data: 0
+  Display: '&6&l來自官方的修補書'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Enchantments:
+  - MENDING:1
+Medal_End_Crystal:
+  Id: end_crystal
+  Data: 0
+  Display: '&6&l來自官方的水晶'
+  Lore:
+  - ''
+  - '&d【&c討伐戰系列&d】'
+  Attributes:
+    MainHand:
+      Health: 1
+      MovementSpeed: 0.1
+Medal_Shulker_Box:
+  Id: shulker_box
+  Data: 0
+  Display: '&6&l來自官方的盒子'
+#
+#進化素材
+Forge_Stone:
+  Id: snowball
+  Data: 0
+  Display: '&5&l進化石'
+  Lore:
+  - ''
+  - '&b稀有素材'
+  - '&a可用來進化武器或裝備'
+  Enchantments:
+  - DURABILITY:10
+  Options:
+   Repairable: false
+#
+#朗基努斯之槍
+Longinus_LV2:
+  Id: trident
+  Data: 0
+  Display: '&5&lロンギヌスの槍 &c● &5&l中級タイプ'
+  Lore:
+  - ''
+  - '&4======================稀有度======================'
+  - '                     &e★ ★ ★ &f☆ ☆                     '
+  - '&4=======================介紹======================='
+  - '&5&lロンギヌスの槍&c 具有強大的力量，能刺穿敵人身體'
+  - '&c據說它的誕生是用來壓制神的力量'
+  - '&c最初有兩把，而其中一把卻不知所蹤...'
+  - '&c聽說是用來對付敵人而沉入大海...?'
+  - '&4=================================================='
+  - '&3&o中級型態'
+  Enchantments:
+  - LOYALTY:8
+  - IMPALING:8
+  - MENDING:1
+  Attributes:
+    MainHand:
+      AttackDamage: 11
+      MaxHealth: 8
+      Movement_Speed: -0.55
+    OffHand:
+      Movement_Speed: -0.55
+  Options:
+   Repairable: false
+#
+#抽獎卷
+Lottery_Ticket_Medal:
+  Id: paper
+  Data: 0
+  Display: '&6&l抽獎卷-討伐任務'
+  Lore:
+  - ''
+  - '&d此物品可以用來抽獎呦'
+  - '&c&lGOOD LUCK ！'
+  - ''
+  Enchantments:
+  - DURABILITY:10
+  Options:
+   Model: 2
+Lottery_Ticket_Challenge:
+  Id: paper
+  Data: 0
+  Display: '&d&l抽獎卷-挑戰任務'
+  Lore:
+  - ''
+  - '&d此物品可以用來抽獎呦'
+  - '&c&lGOOD LUCK ！'
+  - ''
+  Enchantments:
+  - DURABILITY:10
+  Options:
+   Model: 2
+#
+#挑戰
+Challenge_Head:
+  Id: diamond_helmet
+  Data: 0
+  Display: '&d&l百戰百勝的頭盔'
+  Lore:
+  - ''
+  - '&e裝備於頭部時:'
+  - '&b→ &a+3&b 盔甲'
+  - '&b→ &a+2&b 盔甲強度'
+  - '&b→ &a+5%&b 攻擊傷害'
+  - '&b→ &a+5%&b 攻擊速度'
+  - '&b→ &c-5%&b 移動速度'
+  - ''
+  - '&e被動技能:'
+  - '&B→ 自身 &a百毒不侵'
+  - '&B→ 自身 &c無法跳躍'
+  - '&7  發動條件:'
+  - '&7  裝備&d【&c挑戰任務系列&d】&7全套裝備'
+  - '&7  且主手及副手持 &d&l百戰百勝的劍'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - WATER_WORKER:1
+  - OXYGEN:3
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Head:
+      Armor: 3
+      ArmorToughness: 2
+      AttackDamage: 5%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.05
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Chest:
+  Id: diamond_chestplate
+  Data: 0
+  Display: '&d&l百戰百勝的胸甲'
+  Lore:
+  - ''
+  - '&e裝備於身上時:'
+  - '&b→ &a+8&b 盔甲'
+  - '&b→ &a+2&b 盔甲強度'
+  - '&b→ &a+10%&b 攻擊傷害'
+  - '&b→ &a+5%&b 攻擊速度'
+  - '&b→ &c-10%&b 移動速度'
+  - ''
+  - '&e被動技能:'
+  - '&B→ 自身 &a百毒不侵'
+  - '&B→ 自身 &c無法跳躍'
+  - '&7  發動條件:'
+  - '&7  裝備&d【&c挑戰任務系列&d】&7全套裝備'
+  - '&7  且主手及副手持 &d&l百戰百勝的劍'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:5
+  - THORNS:3
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Chest:
+      Armor: 8
+      ArmorToughness: 2
+      AttackDamage: 10%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.1
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Legs:
+  Id: diamond_leggings
+  Data: 0
+  Display: '&d&l百戰百勝的護腿'
+  Lore:
+  - ''
+  - '&e裝備於腿上時:'
+  - '&b→ &a+6&b 盔甲'
+  - '&b→ &a+2&b 盔甲強度'
+  - '&b→ &a+5%&b 攻擊傷害'
+  - '&b→ &a+5%&b 攻擊速度'
+  - '&b→ &c-5%&b 移動速度'
+  - ''
+  - '&e被動技能:'
+  - '&B→ 自身 &a百毒不侵'
+  - '&B→ 自身 &c無法跳躍'
+  - '&7  發動條件:'
+  - '&7  裝備&d【&c挑戰任務系列&d】&7全套裝備'
+  - '&7  且主手及副手持 &d&l百戰百勝的劍'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Legs:
+      Armor: 6
+      ArmorToughness: 2
+      AttackDamage: 5%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.05
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Feet:
+  Id: diamond_boots
+  Data: 0
+  Display: '&d&l百戰百勝的靴子'
+  Lore:
+  - ''
+  - '&e裝備於腳上時:'
+  - '&b→ &a+3&b 盔甲'
+  - '&b→ &a+2&b 盔甲強度'
+  - '&b→ &a+5%&b 攻擊傷害'
+  - '&b→ &a+5%&b 攻擊速度'
+  - '&b→ &c-5%&b 移動速度'
+  - ''
+  - '&e被動技能:'
+  - '&B→ 自身 &a百毒不侵'
+  - '&B→ 自身 &c無法跳躍'
+  - '&7  發動條件:'
+  - '&7  裝備&d【&c挑戰任務系列&d】&7全套裝備'
+  - '&7  且主手及副手持 &d&l百戰百勝的劍'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:4
+  - DEPTH_STRIDER:3
+  - PROTECTION_FALL:4
+  - MENDING:1
+  - BINDING_CURSE:1
+  Attributes:
+    Feet:
+      Armor: 3
+      ArmorToughness: 2
+      AttackDamage: 5%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.05
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Sword:
+  Id: diamond_sword
+  Data: 0
+  Display: '&d&l百戰百勝的劍'
+  Lore:
+  - ''
+  - '&e在慣用手時:'
+  - '&b→ &c-10%&b 移動速度'
+  - '&b→ &c-70%&b 攻擊速度'
+  - '&b→ 獲得 &a力量 II &b效果'
+  - '&b→ 自身&a無視 致命步伐 &b效果'
+  - ''
+  - '&e在非慣用手時:'
+  - '&b→ &a+10%&b 攻擊速度'
+  - '&b→ &c-10%&b 移動速度'
+  - '&b→ 獲得 &c致命步伐 &b效果'
+  - '  &b(處於移動狀態時，每秒扣除玩家 &c0.5 &b生命)'
+  - '&b→ 自身&a無視 前途茫茫 &b敵技'
+  - '  &b(不包含 &c前途茫茫-強 &b)'
+  - ''
+  - '&e被動技能:'
+  - '&b→ 自身 &a百毒不侵'
+  - '&b→ 自身 &c無法跳躍'
+  - '&7  發動條件:'
+  - '&7  裝備&d【&c挑戰任務系列&d】&7全套裝備'
+  - '&7  且主手及副手持 &d&l百戰百勝的劍'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - LOOT_BONUS_MOBS:5
+  - FIRE_ASPECT:2
+  - MENDING:1
+  Attributes:
+    MainHand:
+      AttackSpeed: -0.7
+      Movement_Speed: -0.1
+    OffHand:
+      AttackSpeed: 0.1
+      Movement_Speed: -0.1
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Sword_En:
+  Id: diamond_sword
+  Data: 0
+  Display: '&d&lSword Of Victory'
+  Lore:
+  - ''
+  - '&eWhen in main hand:'
+  - '&b→ &c-10%&b Movement Speed'
+  - '&b→ &c-70%&b Attack Speed'
+  - '&b→ Gain the effect of &aStrength II'
+  - '&b→ &aIgnore &bthe effects of the &aDeadly Step'
+  - ''
+  - '&eWhen in off hand:'
+  - '&b→ &a+10%&b Attack Speed'
+  - '&b→ &c-10%&b Movement Speed'
+  - '&b→ Gain the effect of &cDeadly Step'
+  - '  &b(When in a mobile state, &c0.5 &bhealth per second is deducted from the player)'
+  - '&b→ &aIgnore &bthe enemy skills of the &aboundless future'
+  - '  &b(Does not contain the &cboundless future strong &b)'
+  - ''
+  - '&ePassive skill:'
+  - '&b→ &aNot invaded &bby &apoison'
+  - '&b→ &cCan NOT jump'
+  - '&7  Launch conditions:'
+  - '&7  Equipment&d【&cChallenge Mission Series&d】&7Full set of equipment'
+  - '&7  And the main hand and the off hand hold the &d&lSword Of Victory'
+  - ''
+  - '&d【&cChallenge Mission Series&d】'
+  Enchantments:
+  - LOOT_BONUS_MOBS:5
+  - FIRE_ASPECT:2
+  - MENDING:1
+  Attributes:
+    MainHand:
+      AttackSpeed: -0.7
+      Movement_Speed: -0.1
+    OffHand:
+      AttackSpeed: 0.1
+      Movement_Speed: -0.1
+  Options:
+   Repairable: false
+  Hide:
+  - ATTRIBUTES
+Challenge_Totem:
+  Id: totem_of_undying
+  Data: 0
+  Display: '&d&l百戰百勝的圖騰'
+  Lore:
+  - ''
+  - '&e在非慣用手時:'
+  - '&b→ &a+5%&b 攻擊傷害'
+  - '&b→ &a+5%&b 攻擊速度'
+  - '&b→ &c-10%&b 移動速度'
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - VANISHING_CURSE:1
+  Attributes:
+    OffHand:
+      AttackDamage: 5%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.1
+  Hide:
+  - ATTRIBUTES
+Challenge_Mending:
+  Id: enchanted_book
+  Data: 0
+  Display: '&d&l百戰百勝的修補書'
+  Lore:
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Enchantments:
+  - MENDING:1
+Challenge_End_Crystal:
+  Id: end_crystal
+  Data: 0
+  Display: '&d&l百戰百勝的水晶'
+  Lore:
+  - ''
+  - '&d【&c挑戰任務系列&d】'
+  Attributes:
+    MainHand:
+      AttackDamage: 5%
+      AttackSpeed: 0.05
+      Movement_Speed: -0.05
+Challenge_Shulker_Box:
+  Id: shulker_box
+  Data: 0
+  Display: '&d&l百戰百勝的盒子'
+#

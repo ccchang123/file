@@ -62,7 +62,6 @@ Test:
   #- skill{s=Injury_Reduction_3} @self ~onAttack
   #- skill{s=Injury_Reduction_4} @self ~onAttack
   #- skill{s=Injury_Reduction_5} @self ~onAttack
-  - sound{s=lottery;repeat=6;repeatInterval=140} @self ~onSpawn
   #
   Drops:
   -

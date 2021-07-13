@@ -1,0 +1,41 @@
+# Made by cc_chang
+# © 2020-2021 cc_chang. All rights reserved.
+#
+Zongzi_Material:
+  TotalItems: 1
+  Drops:
+  - Zongye
+  - Zongzi_Stuffing
+Medal_Lottery:
+  TotalItems: 1
+  Drops:
+  - Medal_Head 1 0.025
+  - Medal_Chest 1 0.025
+  - Medal_Legs 1 0.025
+  - Medal_Feet 1 0.025
+  - Medal_Totem 1 0.08625
+  - Medal_Shield 1 0.08625
+  - Medal_Sword 1 0.01
+  - Medal_Bow 1 0.08625
+  - Medal_Trident 1 0.08625
+  - Medal_Pick 1 0.08625
+  - Medal_Mending 1 0.08625
+  - Medal_Shulker_Box 1 0.08625
+  - Medal_End_Crystal 2 0.08625
+  - money 2000 0.2
+Challenge_Lottery:
+  TotalItems: 1
+  Drops:
+  - Challenge_Head 1 0.0525
+  - Challenge_Chest 1 0.0525
+  - Challenge_Legs 1 0.0525
+  - Challenge_Feet 1 0.0525
+  - Challenge_Sword 1 0.015
+  - Challenge_Totem 1 0.05
+  - Challenge_Mending 1 0.05
+  - Challenge_End_Crystal 2 0.1125
+  - Challenge_Shulker_Box 1 0.1125
+  - golden_apple 2 0.1
+  - diamond 10 0.1
+  - wither_skeleton_skull 1 0.05
+  - money 2000 0.2
