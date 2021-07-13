@@ -126,6 +126,26 @@ Zongzi_Stuffing:
     Damage: 10%
   Hide:
   - ENCHANTS
+One_Heart_Warrior:
+  Id: diamond_sword
+  Data: 1511
+  Display: '&c&o一顆心戰士'
+  Lore:
+  - ''
+  - '&d只剩一顆心 ?!'
+  - '&d我相信你可以的!'
+  Enchantments:
+  - DURABILITY:-1
+  Attributes:
+    MainHand:
+      AttackDamage: 30
+      MaxHealth: -99%
+      Movement_Speed: 0.5
+      AttackSpeed: 4
+  Options:
+   Repairable: false
+  Hide:
+  - ENCHANTS
 #------------------------------------------I Am Separate Line------------------------------------------
 Medal:
   Id: paper
