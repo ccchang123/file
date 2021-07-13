@@ -570,6 +570,7 @@ buff:
    Interactable: false
    HasBasePlate: false
    Persistent: true
+#
 #抽獎
 Lottery:
   Type: ARMOR_STAND
@@ -604,6 +605,7 @@ Lottery:
    HasBasePlate: false
    Persistent: true
 #
+#挑戰
 血量之難關:
   Type: zombie
   Display: '&c極限挑戰 - 血量之難關'
@@ -611,7 +613,7 @@ Lottery:
   Damage: 0
   Armor: 2147483647
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
@@ -681,7 +683,7 @@ Lottery:
   Damage: 50
   Armor: 0
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - sound{s=entity.player.attack.crit} @PIR{r=32} ~onSpawn
@@ -744,7 +746,7 @@ Lottery:
   Damage: 0
   Armor: 0
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - barCreate{n=IR;d="&b敵人減傷狀態:<&sp>90%";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
@@ -810,7 +812,7 @@ Lottery:
   Damage: 0
   Armor: 0
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - sound{s=entity.player.attack.crit} @PIR{r=32} ~onSpawn
@@ -868,7 +870,7 @@ Lottery:
   Damage: 5
   Armor: 0
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - addtag{t=Sticky_Rot_Tag} @self ~onSpawn
@@ -929,7 +931,7 @@ Lottery:
   Damage: 5
   Armor: 2147483647
   Skills:
-  - sound{s=music2;repeat=10;repeatInterval=1145} @PIR{r=64} ~onSpawn
+  - sound{s=music2;repeat=10;repeatInterval=1150} @PIR{r=64} ~onSpawn
   - command{c="stopsound @a * music2"} @self ~onDeath
   #
   - barCreate{n=IR;d="&b玩家所需效果:<&sp>中毒<&sp>虛弱";v=1;c=GREEN;s=SEGMENTED_10} @self ~onSpawn
