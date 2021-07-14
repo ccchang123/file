@@ -175,6 +175,8 @@ Test:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
+  - message{m="&d技能編號: ES001"} @trigger ~onInteract
+  #
   - skill{s=Crusade_Set_Count} ~onSpawn
   - skill{s=Crusade_Reward} @trigger ~onDeath
   - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
@@ -245,6 +247,8 @@ Test:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
+  - message{m="&d技能編號: ES002"} @trigger ~onInteract
+  #
   - skill{s=Crusade_Set_Count} ~onSpawn
   - skill{s=Crusade_Reward} @trigger ~onDeath
   - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
@@ -298,10 +302,12 @@ Test:
   - command{c="stopsound @a * music1"} @self ~onDeath
   #
   - skill{s=S3_Skill} @trigger ~onAttack
-  - healPercent{m=100;oh=false} @PIR{r=8} ~onSpawn
+  - healPercent{m=1;oh=false} @PIR{r=8} ~onSpawn
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - effect:bloodyScreen{d=40} @PIR{r=32} ~onTimer:20 <30%
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d技能編號: ES003"} @trigger ~onInteract
   #
   - skill{s=Crusade_Set_Count} ~onSpawn
   - skill{s=Crusade_Reward} @trigger ~onDeath
@@ -367,6 +373,8 @@ Test:
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   #
+  - message{m="&d技能編號: ES004"} @trigger ~onInteract
+  #
   - skill{s=Crusade_Set_Count} ~onSpawn
   - skill{s=Crusade_Reward} @trigger ~onDeath
   - modifyglobalscore{o=Crusade_Count;a=SUBTRACT;v=1} ~onDeath
@@ -430,6 +438,8 @@ Test:
   - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=20} ~onTimer:1
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
+  #
+  - message{m="&d技能編號: ES005"} @trigger ~onInteract
   #
   - skill{s=Crusade_Set_Count} ~onSpawn
   - skill{s=Crusade_Reward} @trigger ~onDeath
@@ -629,7 +639,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d無敵-攻後自殘&e2.5%&d-附加消除 黏腐之地 前途茫茫 無法控制 無視擊退 無視減傷"} @trigger ~onInteract
+  - message{m="&d技能編號: ES006"} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
@@ -701,7 +711,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d敵生-命懸一線 100%減傷盾-越攻越弱"} @trigger ~onInteract
+  - message{m="&d技能編號: ES007"} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
@@ -757,7 +767,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d減傷&e90% &d前途茫茫 &c一擊必殺 &d無視擊退"} @trigger ~onInteract
+  - message{m="&d技能編號: ES008"} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
@@ -825,7 +835,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d敵生-命懸一線 扣血&e30% &d攻後-連續電擊&e20&d秒 "} @trigger ~onInteract
+  - message{m="&d技能編號: ES009 "} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
@@ -885,7 +895,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d攻後-前途茫茫-強 召喚小怪 黏腐之地 遠攻吸收化血"} @trigger ~onInteract
+  - message{m="&d技能編號: ES010"} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
@@ -945,7 +955,7 @@ Lottery:
   - sendtoast{icon=diamond_sword;iconnbt={Enchantments:[{"id":"minecraft:mending","lvl":1}]};m=已成功消滅魔王 !;f=challenge} @trigger ~onDeath
   - sound{s=entity.experience_orb.pickup;p=0.5} @trigger ~onDeath
   #
-  - message{m="&d無敵-附加效果盾-達成自殘&e2.5%&d-未達成回復&e2.5% &d前途茫茫 無視擊退 無法控制"} @trigger ~onInteract
+  - message{m="&d技能編號: ES011"} @trigger ~onInteract
   Drops:
   - Lottery_Ticket_Challenge 1 0.15
   - exp 100-400
