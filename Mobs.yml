@@ -948,6 +948,7 @@ Lottery:
   - skill{s=Effect_Y} @trigger ~onDamaged
   - skill{s=Effect_N1} @trigger ~onDamaged
   - skill{s=Effect_N2} @trigger ~onDamaged
+  - skill{s=Effect_N3} @trigger ~onDamaged
   - potionclear @self ~onTimer:1
   - potion{t=blindness;d=60;hasParticles=false;l=0;force=true} @PIR{r=32} ~onTimer:1
   - closeinventory{forcesync=true} @PIR{r=32} ~onTimer:1

@@ -181,11 +181,11 @@ lightning_20s_1d_0c:
 lightningStart_5s:
   Skills:
   - sound{s=entity.elder_guardian.curse}
-  - potion{t=luck;d=100;hasParticles=false;l=0}
+  - potion{t=luck;d=100;l=0}
 lightningStart_20s:
   Skills:
   - sound{s=entity.elder_guardian.curse}
-  - potion{t=luck;d=400;hasParticles=false;l=0}
+  - potion{t=luck;d=400;l=0}
 #---
 lightningTick_1d:
   Skills:
@@ -283,14 +283,22 @@ Effect_Y:
   - damage{a=5;ia=true;pk=true;pi=true} @self
 Effect_N1:
   TargetConditions:
-  - haspotioneffect{t=WEAKNESS} false
-  Skills:
-  - heal{a=2.5;oh=false} @self
-Effect_N2:
-  TargetConditions:
+  - haspotioneffect{t=WEAKNESS} true
   - haspotioneffect{t=POISON} false
   Skills:
-  - heal{a=2.5;oh=false} @self
+  - heal{a=5;oh=false} @self
+Effect_N2:
+  TargetConditions:
+  - haspotioneffect{t=WEAKNESS} false
+  - haspotioneffect{t=POISON} true
+  Skills:
+  - heal{a=5;oh=false} @self
+Effect_N3:
+  TargetConditions:
+  - haspotioneffect{t=WEAKNESS} false
+  - haspotioneffect{t=POISON} false
+  Skills:
+  - heal{a=5;oh=false} @self
 #-----------------------------------------------I Am Separate Line-----------------------------------------------
 S3_Skill:
   Cooldown: 2
